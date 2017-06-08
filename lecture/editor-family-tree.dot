@@ -1,0 +1,41 @@
+digraph editors {
+  "ed" [
+    label = "ed\n1971"
+  ]
+
+  "ex" [
+    label ="ex\n1976"
+  ]
+
+  vi [
+    label ="vi\n1976"
+  ]
+
+  vim [
+    label = "vim\n1991"
+  ]
+
+  grep [
+    label = "grep\n1974"
+  ]
+
+  sed [
+    label = "sed\n1974"
+  ]
+
+  awk [
+    label = "awk\n1977"
+  ]
+
+  perl [
+    label = "perl\n1987"
+  ]
+  
+  ed -> ex
+  ex -> vi
+  vi -> vim
+  ed -> sed
+  grep -> sed
+  sed -> perl
+  awk -> perl
+}
