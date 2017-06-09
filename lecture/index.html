@@ -137,7 +137,10 @@ class: center, middle
 
 # automate changes to files that might otherwise be done by hand
 
-
+We can use sed to edit files in scripts.  For instance, we can use sed
+to change requiretty to !requiretty in a sudoers configuration file.  If
+we make that change on first boot, configuration management tools could
+then log in to a new machine and deploy desired settings.
 
 ---
 
