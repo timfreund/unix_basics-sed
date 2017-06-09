@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Unix Basics: sed</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style type="text/css">
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+
+      img { width: 80%; }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+# Unix Basics: sed
+
+???
+
+Notes would go here for this slide if I had any.
+
+---
+
+# Sed is a **S**tream **ED**itor
+
+sed needs two things to operate:
+
+1. a list of commands
+2. a source of data
+
+It executes the commands in order and outputs the transformed data.
+
+    $ echo "Hello World" | sed -e "s/World/Nerds/"
+    Hello Nerds
+
+???
+
+---
+
+# Why Bother Learning sed?
+
+Why bother to learn an old esoteric editor when Atom and Visual Studio
+Code and Sublime Text all exist?
+
+- make changes to huge files that traditional editors choke on
+- automate changes to files for hands off deployment/maintenance work
+- use as a part of a pipeline to extract ad hoc reports from data
+
+---
+# The Ancient Editor Family Tree
+
+![](./editor-family-tree.png)
+
+---
+
+class: center, middle
+
+# sed needs two things to operate
+
+---
+
+# sed needs a list of commands
+
+## The most common sed command is substitute (s)
+
+You can use sed for years and only ever use the substitute command
+
+```
+# Search and replace first instance per line
+sed -e "s/search_term/replacement/"
+
+# Search and replace all instances per line
+sed -e "s/search_term/replacement/g"
+
+# Search via regular expressions and replace
+sed -e "s/search_regular_expression/replacement/"
+
+# Expressions are applied in order
+sed -e "s/first_term/first_replacement/" -e "s/second_term/second_replacement/"
+
+```
+
+---
+
+# sed needs a source of data
+
+```
+
+# act on one file
+sed -e "" input_file
+
+# or multiple files
+sed -e "" input_file_1 input_file_2 etc
+
+# or pipe input in to sed
+echo "Hello World" | sed -e ""
+
+```
+---
+
+# Tanget:  pipes
+
+Pipes can route the output stream of one program into the input stream
+of another program.  It's a common tool in shell scripts, so let's see
+some examples.
+
+```
+
+$ echo "Hello World" | sed -e 's/World/Nerds/'
+Hello Nerds
+
+$ cat /etc/passwd | sed -e 's/:.*//' | grep root
+root
+
+```
+
+---
+
+class: center, middle
+
+# Why are we here again?  Let's work through examples
+
+---
+
+# make changes to huge files that traditional editors choke on
+
+---
+
+# automate changes to files for hands off deployment/maintenance work
+
+---
+
+# use sed as a part of a pipeline to extract ad hoc reports from data
+
+---
+
+class: center, middle
+
+# That's all, folks!
+
+    </textarea>
+    <script src="resources/remark.js" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+      var slideshow = remark.create({
+        ratio: '16:9',
+      });
+    </script>
+  </body>
+</html>
