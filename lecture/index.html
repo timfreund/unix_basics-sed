@@ -137,6 +137,23 @@ class: center, middle
 
 ---
 
+# make changes to huge files that traditional editors choke on
+
+```
+$ time cat MERGED2013_14_PP.csv | sed -e 's/PrivacySuppressed/Suppressed/g' -e 's/NULL//g' > MERGED2013_14_PP-edited.csv
+
+real	0m1.617s
+user	0m1.417s
+sys	0m0.141s
+
+$ ls -lah MERGED2013_14_PP*
+-rwxrwxrwx 1 tim tim 142M Dec 15 13:10 MERGED2013_14_PP.csv
+-rw-r--r-- 1 tim tim  97M Jun  9 15:47 MERGED2013_14_PP-edited.csv
+
+```
+
+---
+
 # automate changes to files that might otherwise be done by hand
 
 We can use sed to edit files in scripts.  For instance, we can use sed
