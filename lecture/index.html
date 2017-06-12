@@ -161,8 +161,14 @@ to change requiretty to !requiretty in a sudoers configuration file.  If
 we make that change on first boot, configuration management tools could
 then log in to a new machine and deploy desired settings.
 
----
+```
+sed -e 's/requiretty/!requiretty/' -i sudoers
+```
 
+That's pretty simple, and easy to do by hand, but not if you're building
+new machines all the time.
+
+---
 # automate changes to files, part 2
 
 Let's rename Tom Sawyer to Todd Sawyer.  Things to watch for:
@@ -171,15 +177,20 @@ Let's rename Tom Sawyer to Todd Sawyer.  Things to watch for:
 - Replace Tom with Todd, but not Tomato with Toddato
 - Replace all Toms on a line
 
----
+Exercise pending
 
+---
 # use sed as a part of a pipeline to extract ad hoc reports from data
 
+Exercise pending
+
 ---
 
-class: center, middle
+class: center
 
-# That's all, folks!
+# And we're done for now
+## Source material: https://github.com/timfreund/unix_basics-sed
+## Online presentation: https://codemuxer.com/presentations/unix_basics/sed
 
     </textarea>
     <script src="resources/remark.js" type="text/javascript">
