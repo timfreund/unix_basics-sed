@@ -7,6 +7,9 @@ series on unix basics.  It comes in two parts:
 2. `./lab` - end there for hands on exercises.  Or start there, I'm a
   README, not a cop.
 
+The `./lecture/index.html` file should stand on its own, but you can
+also [view the presentation live](https://codemuxer.com/presentations/unix_basics/sed/).
+
 ## The Lab
 
 The lab portion uses open data provided by third parties. Run
